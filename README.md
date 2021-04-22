@@ -7,10 +7,10 @@
 # Acessar o Broker no navegador
     http://localhost:8161
 
-# Gerar mensagens
+# Gerar mensagens com Python
     docker run -it --link activemq --rm --name running-python -v "$PWD":/usr/src/myapp -w /usr/src/myapp ryanface/python-stomp:0.1 python producer.py
 
-# Ler as mensagens
+# Ler as mensagens com Java
     docker run -it --link activemq --rm --name running-java -v "$PWD":/usr/src/myapp -w /usr/src/myapp openjdk:11 java -cp app.jar com.activemq.consumer.Consumer "bla.bla" 1 "tcp://activemq:61616"
 
 
